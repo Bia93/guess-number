@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+$font: "Press Start 2P", sans-serif;
+$border: 2px solid black;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $font;
+
+  .header {
+    .firstone {
+      margin: 29px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+
+      .again {
+        width: 130px;
+        height: 59px;
+        font-family: $font;
+        background-color: white;
+        border: $border;
+        cursor: pointer;
+      }
+    }
+
+    .secondone {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      .mynumber {
+        font-size: 40px;
+        margin-top: 30px;
+      }
+      .question {
+        font-size: 90px;
+        margin-top: 60px;
+      }
+    }
+  }
+  main {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    .left {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 52rem;
+      gap: 14px;
+      .guess {
+        width: 28%;
+        height: 74px;
+        border: $border;
+        font-family: $font;
+        text-align: center;
+        font-size: 23px;
+      }
+      .check {
+        font-family: $font;
+        border: none;
+        font-size: 25px;
+        background-color: transparent;
+        cursor: pointer;
+      }
+    }
+    .right {
+      font-size: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      line-height: 2;
+      width: 52rem;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", sans-serif;
+}
+body .header .firstone {
+  margin: 29px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+body .header .firstone .again {
+  width: 130px;
+  height: 59px;
+  font-family: "Press Start 2P", sans-serif;
+  background-color: white;
+  border: 2px solid black;
+  cursor: pointer;
+}
+body .header .secondone {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+body .header .secondone .mynumber {
+  font-size: 40px;
+  margin-top: 30px;
+}
+body .header .secondone .question {
+  font-size: 90px;
+  margin-top: 60px;
+}
+body main {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+body main .left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 52rem;
+  gap: 14px;
+}
+body main .left .guess {
+  width: 28%;
+  height: 74px;
+  border: 2px solid black;
+  font-family: "Press Start 2P", sans-serif;
+  text-align: center;
+  font-size: 23px;
+}
+body main .left .check {
+  font-family: "Press Start 2P", sans-serif;
+  border: none;
+  font-size: 25px;
+  background-color: transparent;
+  cursor: pointer;
+}
+body main .right {
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 2;
+  width: 52rem;
+} /*# sourceMappingURL=style.css.map */
