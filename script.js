@@ -2,8 +2,6 @@ let random = Math.floor(Math.random() * 30) + 1;
 let score = 30;
 let highscore = 0;
 
-document.querySelector(".question").textContent = random;
-document.querySelector(".question").textContent = "?";
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);
@@ -13,9 +11,13 @@ document.querySelector(".check").addEventListener("click", function () {
   } else if (random < guess) {
     document.querySelector(".message").textContent = "TOO BIG";
   } else if (random > guess) {
-    document.querySelector(".message").textContent = "TOO LOW";
-    score--;
-    document.querySelector(".score").textContent = score;
+    if (score > 0) {
+      document.querySelector(".message").textContent = "TOO LOW";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".message").textContent = "YOU LOST THE GAME";
+    }
   } else if (random === guess) {
     startConfetti();
     document.querySelector(".message").textContent = "YOU NAILED IT!";
@@ -24,7 +26,6 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".highscore").textContent = highscore;
 
     document.querySelector("body").style.backgroundColor = "#F187D7";
-    document.querySelector(".again").style.backgroundColor = "#EFE8EF";
   }
 });
 document.querySelector(".again").addEventListener("click", function () {
@@ -35,10 +36,10 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".guess").value = "";
   highscore = 0;
   document.querySelector(".highscore").textContent = highscore;
-
+  document.querySelector("body").style.backgroundColor = "#FFFFFF";
   stopConfetti();
 });
-//CONFETTI PART
+//CONFETTI PART-----------------------------
 var maxParticleCount = 150; //set max confetti count
 var particleSpeed = 5; //set the particle animation speed
 var startConfetti; //call to start confetti animation
@@ -107,14 +108,6 @@ var removeConfetti; //call to stop the confetti animation and remove all confett
       document.body.appendChild(canvas);
       canvas.width = width;
       canvas.height = height;
-      window.addEventListener(
-        "resize",
-        function () {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-        },
-        true
-      );
     }
     var context = canvas.getContext("2d");
     while (particles.length < maxParticleCount)
