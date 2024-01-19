@@ -1,8 +1,9 @@
 let random = Math.floor(Math.random() * 30) + 1;
 let score = 30;
 let highscore = 0;
+const check = document.querySelector(".check");
 
-document.querySelector(".check").addEventListener("click", function () {
+function checkGuess() {
   const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);
 
@@ -16,7 +17,7 @@ document.querySelector(".check").addEventListener("click", function () {
       score--;
       document.querySelector(".score").textContent = score;
     } else {
-      document.querySelector(".message").textContent = "YOU LOST THE GAME";
+      document.querySelector(".message").textContent = "YOU LOOST THE GAME";
     }
   } else if (random === guess) {
     startConfetti();
@@ -27,7 +28,16 @@ document.querySelector(".check").addEventListener("click", function () {
 
     document.querySelector("body").style.backgroundColor = "#F187D7";
   }
+}
+
+check.addEventListener("click", checkGuess);
+
+document.querySelector(".guess").addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    checkGuess();
+  }
 });
+
 document.querySelector(".again").addEventListener("click", function () {
   score = 30;
   document.querySelector(".score").textContent = score;
@@ -39,6 +49,7 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector("body").style.backgroundColor = "#FFFFFF";
   stopConfetti();
 });
+
 //CONFETTI PART-----------------------------
 var maxParticleCount = 150; //set max confetti count
 var particleSpeed = 5; //set the particle animation speed
